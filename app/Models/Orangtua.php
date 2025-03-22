@@ -10,8 +10,8 @@ class Orangtua extends Model
 {
     use HasFactory;
 
-    protected $table = 'orang_tua'; // Nama tabel di database
-    protected $primaryKey = 'id_orang_tua'; // Primary key
+    protected $table = 'tb_orang_tua'; // Nama tabel di database
+    protected $primaryKey = 'id'; // Primary key
     public $incrementing = true; // Primary key menggunakan auto-increment
     protected $keyType = 'int'; // Tipe data primary key adalah integer
 
@@ -19,7 +19,7 @@ class Orangtua extends Model
         'nama',
         'nik',
         'no_kk',
-        'no_telfon',
+        'no_hp',
         'alamat',
     ];
 
@@ -31,5 +31,9 @@ class Orangtua extends Model
     public function anak(): HasMany
     {
         return $this->hasMany(Anak::class, 'id_orang_tua', 'id_orang_tua');
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id_orang_tua', 'id');
     }
 }

@@ -9,7 +9,7 @@ class Pemeriksaan extends Model
 {
     use HasFactory;
 
-    protected $table = 'pemeriksaan';
+    protected $table = 'tb_pemeriksaan';
     protected $primaryKey = 'id_pemeriksaan';
     protected $fillable = [
         'id_anak',
@@ -31,8 +31,8 @@ class Pemeriksaan extends Model
         return $this->belongsTo(Anak::class, 'id_anak');
     }
 
-    public function orangTua()
+    public function Orangtua()
     {
-        return $this->belongsTo(OrangTua::class, 'id_orang_tua');
+        return $this->belongsTo(Orangtua::class, 'id_orang_tua');
     }
 }

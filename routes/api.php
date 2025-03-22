@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\API\ApiAuthController;
+use App\Http\Controllers\ApiAntrianController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +26,5 @@ use App\Http\Controllers\API\AuthController;
 
 Route::post('/login', [ApiAuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [ApiAuthController::class, 'logout']);
+Route::post('/antrian', [ApiAntrianController::class, 'store']);
+Route::get('/antrian/{nomor_antrian}', [ApiAntrianController::class, 'show']);

@@ -13,14 +13,8 @@ class Anak extends Model
     protected $primaryKey = 'id_anak'; // Primary key
 
     protected $fillable = [
-        'id_orang_tua',
-        'nama',
-        'nik',
-        'TTL',
-        'umur_tahun',
-        'umur_bulan',
-        'JK',
-        'anak_ke',
+        'id_orang_tua', 'nama', 'nik', 'tempat_lahir', 'tanggal_lahir',
+        'umur_tahun', 'umur_bulan', 'JK', 'anak_ke'
     ];
 
     public $timestamps = true; // Menggunakan timestamps (created_at, updated_at)
@@ -28,8 +22,8 @@ class Anak extends Model
     /**
      * Relasi ke tabel orang_tua
      */
-    public function orangTua()
+    public function Orangtua()
     {
-        return $this->belongsTo(OrangTua::class, 'id_orang_tua', 'id_orang_tua');
+        return $this->belongsTo(Orangtua::class, 'id_orang_tua', 'id');
     }
 }

@@ -21,8 +21,10 @@ class User extends Authenticatable
         'name',
         'noKK',
         'password',
-        'level'
+        'level',
+        'id_orang_tua'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -33,6 +35,10 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function orangTua()
+    {
+        return $this->belongsTo(Orangtua::class, 'id_orang_tua', 'id');
+    }
 
     /**
      * The attributes that should be cast.

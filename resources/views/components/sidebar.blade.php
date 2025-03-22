@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Posyandu</a>
+            <a href="index.html">Wapili Enak</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">WE</a>
@@ -20,7 +20,46 @@
 
 
 
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Orangtua</span></a>
+                <ul class="dropdown-menu">
 
+                        <li>
+                            <a class="nav-link" href="{{ route('orangtua.index') }}">Orangtua</a>
+                        </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Anak</span></a>
+                <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="nav-link" href="{{ route('anak.index') }}">Anak</a>
+                        </li>
+
+
+
+
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>User</span></a>
+                <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="nav-link" href="{{ route('user.index') }}">User</a>
+                        </li>
+
+
+
+
+
+
+                </ul>
+            </li>
             {{-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Data</span></a>
                 <ul class="dropdown-menu">

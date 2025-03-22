@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('noKK');
-            $table->string('email')->unique();
+            // $table->string('email')->unique();
             $table->string('password');
+            $table->string('level');
+            $table->string('id_orang_tua');
             $table->rememberToken();
             $table->timestamps();
         });

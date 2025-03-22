@@ -11,11 +11,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $totalPengguna = User::count();
-        $totalJadwal = Posyandu::count();
-        $totalPemeriksaan = Pemeriksaan::count();
-        $notifikasi = 8; // Data contoh
-
-        return view('dashboard', compact('totalPengguna', 'totalJadwal', 'totalPemeriksaan', 'notifikasi'));
-    }
+        return view( 'home');
+        }
 }
