@@ -13,8 +13,16 @@ class Anak extends Model
     protected $primaryKey = 'id_anak'; // Primary key
 
     protected $fillable = [
-        'id_orang_tua', 'nama', 'nik', 'tempat_lahir', 'tanggal_lahir',
-        'umur_tahun', 'umur_bulan', 'JK', 'anak_ke'
+        'id_anak',
+        'id_orang_tua',
+        'nama',
+        'nik',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'umur_tahun',
+        'umur_bulan',
+        'JK',
+        'anak_ke'
     ];
 
     public $timestamps = true; // Menggunakan timestamps (created_at, updated_at)

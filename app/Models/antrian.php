@@ -17,7 +17,8 @@ class Antrian extends Model
         'id_jadwal',
         'id_anak',
         'waktu_antrian',
-        'nomor_antrian'
+        'nomor_antrian',
+        'hadir'
     ];
 
     public function jadwal()

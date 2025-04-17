@@ -5,7 +5,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnakController;
+use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\OrangtuaController;
+use App\Http\Controllers\PemeriksaanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,5 +38,21 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('anak', AnakController::class);
     Route::resource('user', UserController::class);
 
+    Route::get('/pemeriksaan', [PemeriksaanController::class, 'index'])->name('pemeriksaan.index');
+    Route::get('/pemeriksaan/create', [PemeriksaanController::class, 'create'])->name('pemeriksaan.create');
+    Route::post('/pemeriksaan', [PemeriksaanController::class, 'store'])->name('pemeriksaan.store');
+
+    Route::get('/antrian', [AntrianController::class, 'index'])->name('antrian.index');
+    Route::post('/antrian/{id}/hadir', [AntrianController::class, 'updateHadir'])->name('antrian.updateHadir');
+    // Route::get('/pemeriksaan/create', [AntrianController::class, 'create'])->name('pemeriksaan.create');
+    // Route::post('/pemeriksaan', [AntrianController::class, 'store'])->name('pemeriksaan.store');
+
+    Route::get('/jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
+    Route::get('/jadwal/create', [JadwalController::class, 'create'])->name('jadwal.create');
+    Route::post('/jadwal', [JadwalController::class, 'store'])->name('jadwal.store');
+    Route::post('/jadwal/{id}/aktif', [JadwalController::class, 'updateAktif'])->name('jadwal.updateAktif');
+    Route::post('/jadwal/{id}/nonaktif', [JadwalController::class, 'updateNonAktif'])->name('jadwal.updateNonAktif');
+
+   
 
 });

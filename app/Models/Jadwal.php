@@ -18,6 +18,7 @@ class Jadwal extends Model
     protected $fillable = [
         'tanggal',
         'bulan',
-        'tahun'
+        'tahun',
+        'aktif'
     ];
 }

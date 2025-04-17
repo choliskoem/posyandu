@@ -1,8 +1,8 @@
 <?php
 
-
+use App\Http\Controllers\API\ApiAntrianController;
 use App\Http\Controllers\API\ApiAuthController;
-use App\Http\Controllers\ApiAntrianController;
+use App\Http\Controllers\ApiPemeriksaanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-use App\Http\Controllers\API\AuthController;
+
 
 Route::post('/login', [ApiAuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [ApiAuthController::class, 'logout']);
 Route::post('/antrian', [ApiAntrianController::class, 'store']);
 Route::get('/antrian/{nomor_antrian}', [ApiAntrianController::class, 'show']);
+Route::get('/jadwal', [ApiAntrianController::class, 'getJadwal']);
+Route::get('/anak/{id_orang_tua}', [ApiAntrianController::class, 'getAnakByOrangTua']);
+Route::get('pemeriksaan/{id_orang_tua}', [ApiPemeriksaanController::class, 'showByIdOrangTua']);
+

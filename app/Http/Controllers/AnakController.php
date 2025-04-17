@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class AnakController extends Controller
 {
     public function index()
-    {
-        $data = Anak::with('orangtua')->get();
+    {  $data = Anak::with('orangtua')->get();
+      
         return view('pages.anak.index', compact('data'));
     }
 
