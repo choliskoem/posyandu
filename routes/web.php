@@ -9,6 +9,7 @@ use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\OrangtuaController;
 use App\Http\Controllers\PemeriksaanController;
+use App\Http\Controllers\SuratController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/jadwal/{id}/aktif', [JadwalController::class, 'updateAktif'])->name('jadwal.updateAktif');
     Route::post('/jadwal/{id}/nonaktif', [JadwalController::class, 'updateNonAktif'])->name('jadwal.updateNonAktif');
 
-   
+    Route::get('/upload-surat', [SuratController::class, 'form'])->name('surat.form');
+    Route::post('/upload-surat', [SuratController::class, 'upload'])->name('surat.upload');
+    Route::get('/daftar-surat', [SuratController::class, 'index'])->name('surat.index');
 
 });

@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Wapili Enak</a>
+            <a href="index.html">Posyandu</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">WE</a>
+            <a href="index.html">PO</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -19,7 +19,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>User Management</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>User Management</span></a>
                 <ul class="dropdown-menu">
 
                         <li>
@@ -37,9 +37,12 @@
             </li>
 
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Pemeriksaan Management</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Pemeriksaan Management</span></a>
                 <ul class="dropdown-menu">
 
+                    <li>
+                        <a class="nav-link" href="{{ route('surat.index') }}">Surat</a>
+                    </li>
                     <li>
                         <a class="nav-link" href="{{ route('jadwal.index') }}">Jadwal</a>
                     </li>

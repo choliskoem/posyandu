@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Anak ')
+@section('title', 'Create Pemeriksaan ')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -16,16 +16,16 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Anak</h1>
+                <h1>Pemeriksaan</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Forms</a></div>
-                    <div class="breadcrumb-item">Anak</div>
+                    <div class="breadcrumb-item">Pemeriksaan</div>
                 </div>
             </div>
 
             <div class="section-body">
-                <h2 class="section-title">Anak</h2>
+                <h2 class="section-title">Pemeriksaan</h2>
                 <div class="card">
                     <div class="card-body">
                         <form action="{{ route('pemeriksaan.store') }}" method="POST" class="row g-3">

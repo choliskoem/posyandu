@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Anak')
+@section('title', 'Jadwal')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -48,14 +48,14 @@
                                     </select>
                                 </div>
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('anak.index') }}">
+                                    {{-- <form method="GET" action="{{ route('anak.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form> --}}
                                 </div>
 
                                 <div class="clearfix mb-3"></div>

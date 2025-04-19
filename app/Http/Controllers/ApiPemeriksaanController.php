@@ -12,7 +12,10 @@ class ApiPemeriksaanController extends Controller
      */
     public function showByIdOrangTua($id_orang_tua)
     {
-        $pemeriksaan = Pemeriksaan::where('id_orang_tua', $id_orang_tua)->get();
+        $pemeriksaan = Pemeriksaan::select('tb_anak.nama', 'tb_anak.nik', 'tb_anak.JK', 'tb_anak.anak_ke', 'tb_pemeriksaan.*')
+        ->leftJoin('tb_anak', 'tb_anak.id_anak', '=', 'tb_pemeriksaan.id_anak')
+        ->where('tb_pemeriksaan.id_orang_tua', $id_orang_tua)
+        ->get();
 
         if ($pemeriksaan->isEmpty()) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);

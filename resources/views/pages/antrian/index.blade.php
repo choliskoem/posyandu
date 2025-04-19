@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Anak')
+@section('title', 'Antrian')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -48,11 +48,20 @@
                                     </select>
                                 </div>
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('anak.index') }}">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" name="name">
+                                    <form method="GET" action="{{ route('antrian.index') }}">
+                                        <div class="input-group mb-3">
+                                            <select name="id_jadwal" class="form-control selectric">
+                                                <option value="">Pilih Jadwal</option>
+                                                @foreach($jadwals as $jadwal)
+                                                    <option value="{{ $jadwal->id_jadwal }}" {{ request('id_jadwal') == $jadwal->id_jadwal ? 'selected' : '' }}>
+                                                        {{ $jadwal->tanggal }} / {{ $jadwal->bulan }} / {{ $jadwal->tahun }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                                <button class="btn btn-primary" type="submit">
+                                                    <i class="fas fa-filter"></i> Filter
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

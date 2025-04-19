@@ -3,6 +3,8 @@
 use App\Http\Controllers\API\ApiAntrianController;
 use App\Http\Controllers\API\ApiAuthController;
 use App\Http\Controllers\ApiPemeriksaanController;
+use App\Http\Controllers\ApiProfileController;
+use App\Http\Controllers\ApiSuratController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +33,8 @@ Route::get('/antrian/{nomor_antrian}', [ApiAntrianController::class, 'show']);
 Route::get('/jadwal', [ApiAntrianController::class, 'getJadwal']);
 Route::get('/anak/{id_orang_tua}', [ApiAntrianController::class, 'getAnakByOrangTua']);
 Route::get('pemeriksaan/{id_orang_tua}', [ApiPemeriksaanController::class, 'showByIdOrangTua']);
+
+Route::get('profile/{id}', [ApiProfileController::class, 'show']);
+Route::get('/surat/pdf', [ApiSuratController::class, 'showPdf']);
+
 
