@@ -28,62 +28,35 @@
                 <h2 class="section-title">Anak</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('anak.store') }}" method="POST">
+                        <form action="{{ route('jadwal.store') }}" method="POST">
                             @csrf
-                            <div class="form-group">
-                                <label>Nama Orang Tua</label>
-                                <select name="id_orang_tua" class="form-control" required>
-                                    @foreach($orangtua as $parent)
-                                        <option value="{{ $parent->id }}">{{ $parent->nama }}</option>
-                                    @endforeach
+                    
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label">Tanggal</label>
+                                <input type="number" name="tanggal" class="form-control" placeholder="Masukkan tanggal (1-31)" value="{{ old('tanggal') }}">
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="bulan" class="form-label">Bulan</label>
+                                <input type="number" name="bulan" class="form-control" placeholder="Masukkan bulan (1-12)" value="{{ old('bulan') }}">
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="tahun" class="form-label">Tahun</label>
+                                <input type="number" name="tahun" class="form-control" placeholder="Masukkan tahun (misal 2025)" value="{{ old('tahun') }}">
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="aktif" class="form-label">Status Aktif</label>
+                                <select name="aktif" class="form-select">
+                                    <option value="">-- Pilih Status --</option>
+                                    <option value="yes" {{ old('aktif') == '1' ? 'selected' : '' }}>Aktif</option>
+                                    <option value="no" {{ old('aktif') == '0' ? 'selected' : '' }}>Tidak Aktif</option>
                                 </select>
                             </div>
-
-                            <div class="form-group">
-                                <label>Nama Anak</label>
-                                <input type="text" name="nama" class="form-control" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>NIK</label>
-                                <input type="text" name="nik" class="form-control" maxlength="16" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Tempat Lahir</label>
-                                <input type="text" name="tempat_lahir" class="form-control" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Tanggal Lahir</label>
-                                <input type="date" name="tanggal_lahir" class="form-control" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Umur Tahun</label>
-                                <input type="number" name="umur_tahun" class="form-control" >
-                            </div>
-
-                            <div class="form-group">
-                                <label>Umur Bulan</label>
-                                <input type="number" name="umur_bulan" class="form-control" >
-                            </div>
-
-                            <div class="form-group">
-                                <label>Jenis Kelamin</label>
-                                <select name="JK" class="form-control">
-                                    <option value="L">Laki-laki</option>
-                                    <option value="P">Perempuan</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Anak Ke</label>
-                                <input type="text" name="anak_ke" class="form-control" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="{{ route('anak.index') }}" class="btn btn-secondary">Kembali</a>
+                    
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                            <a href="{{ route('jadwal.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
                 </div>

@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
           User::create([
             'name' => "Helwa",
-            'noKK' => "750302",
-            'password' => Hash::make('12345678'),
+            'noKK' => "admin@gmail.com",
+            'password' => Hash::make('admin#123'),
             'level' => 'masyarakat',
             'id_orang_tua' => '12'
           ]);
